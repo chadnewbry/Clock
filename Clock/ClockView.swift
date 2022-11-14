@@ -12,7 +12,7 @@ struct ClockView: View {
     @StateObject var viewModel: ClockViewModel
     
     var body: some View {
-        return EmptyView()
+        Text(viewModel.time)
     }
 }
 

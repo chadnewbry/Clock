@@ -9,26 +9,23 @@ import Foundation
 
 class ClockViewModel: ObservableObject, Hashable {
 
-    
-    
-    @Published private(set) var times: [String] = [""]
+    @Published private(set) var time: String
     
     init(date: Date) {
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .none
+        dateFormatter.timeStyle = .short
         
-//        self.offsets = offsets
-//        
+        time = dateFormatter.string(from: date)
+        
 //        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
 //            
 //           
 //            
-//            for i in 0..<offsets.count {
+//           
 //                
-//                let offset = offsets[i]
-//                
-//                var date = Date()
-//                let calendar = Calendar.current
-//                let hour = calendar.component(.hour, from: date)
+//      
 //                
 //                let hourString = String(hour) + String(offset)
 //                
@@ -42,10 +39,10 @@ class ClockViewModel: ObservableObject, Hashable {
     }
     
     static func == (lhs: ClockViewModel, rhs: ClockViewModel) -> Bool {
-        return lhs.times == rhs.times
+        return lhs.time == rhs.time
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(times)
+        hasher.combine(time)
     }
 }
