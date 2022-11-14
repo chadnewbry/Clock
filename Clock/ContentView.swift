@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
+    /// Clock view models to be displayed
     var viewModels: [ClockViewModel]
     
     var body: some View {

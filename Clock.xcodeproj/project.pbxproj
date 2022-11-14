@@ -15,6 +15,7 @@
 		241002162922A5880055214E /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241002152922A5880055214E /* ClockView.swift */; };
 		241002242922C1600055214E /* ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241002232922C1600055214E /* ClockTests.swift */; };
 		2410022A2922C19D0055214E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2410021B2922C1280055214E /* XCTest.framework */; platformFilter = ios; };
+		2410022C2922C4860055214E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2410022B2922C4860055214E /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		2410021B2922C1280055214E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		241002212922C1600055214E /* ClockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		241002232922C1600055214E /* ClockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTests.swift; sourceTree = "<group>"; };
+		2410022B2922C4860055214E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				2410021329229EED0055214E /* ClockViewModel.swift */,
 				241002152922A5880055214E /* ClockView.swift */,
+				2410022B2922C4860055214E /* Utils.swift */,
 			);
 			path = Clock;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2410022C2922C4860055214E /* Utils.swift in Sources */,
 				2410020829229EC10055214E /* ContentView.swift in Sources */,
 				241002162922A5880055214E /* ClockView.swift in Sources */,
 				2410020629229EC10055214E /* ClockApp.swift in Sources */,

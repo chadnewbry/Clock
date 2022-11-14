@@ -7,13 +7,20 @@
 
 import Foundation
 
+
 class ClockViewModel: ObservableObject, Hashable {
     
-    // todo: move date format to util function and use for this initilizer
+    /// Time to be displayed
     @Published private(set) var time: String = ""
     
     private var date: Date
     
+    
+    /// ViewModel for a ClockView.
+    ///
+    /// Starts a timer that updates the clock view every second
+    ///
+    /// - Parameter date: start time for the clock
     init(date: Date) {
         
         self.date = date
@@ -26,11 +33,7 @@ class ClockViewModel: ObservableObject, Hashable {
     }
     
     private func formatTime() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .none
-        dateFormatter.timeStyle = .medium
-        
-        time = dateFormatter.string(from: date)
+        time = Utils.format(date: self.date)
     }
     
     static func == (lhs: ClockViewModel, rhs: ClockViewModel) -> Bool {
@@ -40,7 +43,4 @@ class ClockViewModel: ObservableObject, Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(time)
     }
-    
-    
-
 }
