@@ -20,7 +20,8 @@ class ClockViewModel: ObservableObject, Hashable {
         formatTime()
         
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-//            self.date = self.date.addingTimeInterval(1)
+            self.date = self.date.addingTimeInterval(1)
+            self.formatTime()
         }
     }
     
