@@ -15,7 +15,7 @@ class ClockViewModel: ObservableObject, Hashable {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
-        dateFormatter.timeStyle = .short
+        dateFormatter.timeStyle = .medium
         
         time = dateFormatter.string(from: date)
         
