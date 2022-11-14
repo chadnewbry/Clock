@@ -8,34 +8,28 @@
 import Foundation
 
 class ClockViewModel: ObservableObject, Hashable {
-
-    @Published private(set) var time: String
+    
+    // todo: move date format to util function and use for this initilizer
+    @Published private(set) var time: String = ""
+    
+    private var date: Date
     
     init(date: Date) {
         
+        self.date = date
+        formatTime()
+        
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+//            self.date = self.date.addingTimeInterval(1)
+        }
+    }
+    
+    private func formatTime() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .medium
         
         time = dateFormatter.string(from: date)
-        
-//        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-//            
-//           
-//            
-//           
-//                
-//      
-//                
-//                let hourString = String(hour) + String(offset)
-//                
-//                let minutes = calendar.component(.minute, from: date)
-//                let seconds = calendar.component(.second, from: date)
-//                
-//                self.times[i] = String(hourString) + ":" + String(minutes) + ":" + String(seconds)
-//                
-//            }
-//        }
     }
     
     static func == (lhs: ClockViewModel, rhs: ClockViewModel) -> Bool {
@@ -45,4 +39,7 @@ class ClockViewModel: ObservableObject, Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(time)
     }
+    
+    
+
 }
