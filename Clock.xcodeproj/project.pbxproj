@@ -11,6 +11,8 @@
 		2410020829229EC10055214E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2410020729229EC10055214E /* ContentView.swift */; };
 		2410020A29229EC20055214E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2410020929229EC20055214E /* Assets.xcassets */; };
 		2410020D29229EC20055214E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2410020C29229EC20055214E /* Preview Assets.xcassets */; };
+		2410021429229EED0055214E /* ClockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2410021329229EED0055214E /* ClockViewModel.swift */; };
+		241002162922A5880055214E /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241002152922A5880055214E /* ClockView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		2410020729229EC10055214E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2410020929229EC20055214E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2410020C29229EC20055214E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2410021329229EED0055214E /* ClockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewModel.swift; sourceTree = "<group>"; };
+		241002152922A5880055214E /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 				2410020729229EC10055214E /* ContentView.swift */,
 				2410020929229EC20055214E /* Assets.xcassets */,
 				2410020B29229EC20055214E /* Preview Content */,
+				2410021329229EED0055214E /* ClockViewModel.swift */,
+				241002152922A5880055214E /* ClockView.swift */,
 			);
 			path = Clock;
 			sourceTree = "<group>";
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2410020829229EC10055214E /* ContentView.swift in Sources */,
+				241002162922A5880055214E /* ClockView.swift in Sources */,
 				2410020629229EC10055214E /* ClockApp.swift in Sources */,
+				2410021429229EED0055214E /* ClockViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

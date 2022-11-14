@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var viewModel: ClockViewModel
+    
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            
+            ForEach(viewModel.times, id: \.self) { time in
+                Text(time)
+            }
         }
         .padding()
     }
@@ -21,6 +25,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModels: ClockViewModel(offsets: [0, 5, 10, 15, 16]))
     }
 }
