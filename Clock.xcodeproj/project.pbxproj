@@ -13,9 +13,11 @@
 		2410020D29229EC20055214E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2410020C29229EC20055214E /* Preview Assets.xcassets */; };
 		2410021429229EED0055214E /* ClockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2410021329229EED0055214E /* ClockViewModel.swift */; };
 		241002162922A5880055214E /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241002152922A5880055214E /* ClockView.swift */; };
-		241002242922C1600055214E /* ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241002232922C1600055214E /* ClockTests.swift */; };
+		241002242922C1600055214E /* ClockUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241002232922C1600055214E /* ClockUnitTests.swift */; };
 		2410022A2922C19D0055214E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2410021B2922C1280055214E /* XCTest.framework */; platformFilter = ios; };
 		2410022C2922C4860055214E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2410022B2922C4860055214E /* Utils.swift */; };
+		241002302922C7320055214E /* ClockSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2410022F2922C7320055214E /* ClockSnapshotTests.swift */; };
+		241002322922C76D0055214E /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 241002312922C76D0055214E /* SnapshotTesting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +40,9 @@
 		241002152922A5880055214E /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		2410021B2922C1280055214E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		241002212922C1600055214E /* ClockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		241002232922C1600055214E /* ClockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTests.swift; sourceTree = "<group>"; };
+		241002232922C1600055214E /* ClockUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockUnitTests.swift; sourceTree = "<group>"; };
 		2410022B2922C4860055214E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		2410022F2922C7320055214E /* ClockSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockSnapshotTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +51,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2410022A2922C19D0055214E /* XCTest.framework in Frameworks */,
+				241002322922C76D0055214E /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +118,8 @@
 		241002222922C1600055214E /* ClockTests */ = {
 			isa = PBXGroup;
 			children = (
-				241002232922C1600055214E /* ClockTests.swift */,
+				241002232922C1600055214E /* ClockUnitTests.swift */,
+				2410022F2922C7320055214E /* ClockSnapshotTests.swift */,
 			);
 			path = ClockTests;
 			sourceTree = "<group>";
@@ -134,6 +139,9 @@
 			dependencies = (
 			);
 			name = Clock;
+			packageProductDependencies = (
+				2410022E2922C7000055214E /* SnapshotTesting */,
+			);
 			productName = Clock;
 			productReference = 2410020229229EC10055214E /* Clock.app */;
 			productType = "com.apple.product-type.application";
@@ -152,6 +160,9 @@
 				241002262922C1600055214E /* PBXTargetDependency */,
 			);
 			name = ClockTests;
+			packageProductDependencies = (
+				241002312922C76D0055214E /* SnapshotTesting */,
+			);
 			productName = ClockTests;
 			productReference = 241002212922C1600055214E /* ClockTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -184,6 +195,9 @@
 				Base,
 			);
 			mainGroup = 241001F929229EC00055214E;
+			packageReferences = (
+				2410022D2922C7000055214E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = 2410020329229EC10055214E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -230,7 +244,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				241002242922C1600055214E /* ClockTests.swift in Sources */,
+				241002302922C7320055214E /* ClockSnapshotTests.swift in Sources */,
+				241002242922C1600055214E /* ClockUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +495,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2410022D2922C7000055214E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2410022E2922C7000055214E /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2410022D2922C7000055214E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+		241002312922C76D0055214E /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2410022D2922C7000055214E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 241001FA29229EC00055214E /* Project object */;
 }
