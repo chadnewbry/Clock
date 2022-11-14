@@ -12,12 +12,12 @@ struct ClockView: View {
     @StateObject var viewModel: ClockViewModel
     
     var body: some View {
-        Text(viewModel.time)
+        return EmptyView()
     }
 }
 
 struct ClockView_Previews: PreviewProvider {
     static var previews: some View {
-        ClockView(viewModel: ClockViewModel())
+        ClockView(viewModel: ClockViewModel(date: Date()))
     }
 }
